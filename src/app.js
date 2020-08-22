@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 
 //routes
 const loginRoute = require('./routes/login-route/login-route');
+const signupRoute = require('./routes/signup-route/siginup-route');
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use(bodyParser.json());
 //routes middleware
 
 app.use('/api/login',loginRoute);
+app.use('/api/users/signup',signupRoute);
 
 
 //error handling middleware
