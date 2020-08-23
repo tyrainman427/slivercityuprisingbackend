@@ -20,6 +20,12 @@ loginRouter.route('/').post((req, res, next) => {
 				return res.status(400).json({
 					error: 'Incorrect User Name or Password'
 				});
+
+			if(!dbUser.isactive)	{
+				return res.status(400).json({
+					error: 'User not active'
+				});
+			}
 			return loginService.comparePasswords(user.password, dbUser.password).then((compareMatch) => {
 				if (!compareMatch) {
 					return res.status(400).json({

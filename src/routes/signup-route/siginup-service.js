@@ -23,15 +23,15 @@ const signUpServices = {
 			.then((user) => signUpServices.getByUserId(db, user.user_id));
 	},
 
-	deleteUser(db, user_id) {
+	deleteUser(db, user_id) {               
 		return signUpServices.getAllUsers(db).where('user_id', user_id).del();
 	},
 
-	updateUser(db, id, userInfo) {
+	updateUser(db, user_id, userInfo) {
 		return signUpServices.getAllUsers(db).where('user_id', user_id).update(userInfo);
 	},
 
-	serializeUsers(user) {
+	serializeUsers(user) {       
 		return user.map(this.serializeUser);
 	},
 
