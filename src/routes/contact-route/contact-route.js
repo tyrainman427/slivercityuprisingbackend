@@ -29,7 +29,7 @@ contactUsRouter
     
     const mailOpts = {
       from: 'Sender Info Placeholder',
-      to: process.env.TEST_EMAIL || 'info@silvercityuprising.org',
+      to: process.env.TEST_EMAIL || 'support@silvercityuprising.org',
       subject: 'New Message from Contact Form',
       text: `${name} (${email}) says: ${message}`
     }
